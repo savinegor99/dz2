@@ -1,0 +1,229 @@
+/* Общие сбросы и базовые стили */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #222;
+    background: #fff;
+}
+
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Шапка сайта */
+.site-header {
+    width: 100%;
+    background: #eeeeee;
+    border-bottom: 1px solid #cccccc;
+}
+
+.header-inner {
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.site-name {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.logo-link {
+    display: block;
+    flex-shrink: 0; /* Чтобы логотип не сжимался */
+}
+
+.logo {
+    display: block;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+}
+
+/* Навигационное меню */
+.site-nav {
+    width: 100%;
+    background: #dddddd;
+    border-bottom: 1px solid #bbbbbb;
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.nav-inner a {
+    display: block;
+    padding: 12px 22px;
+    color: #222;
+    text-decoration: none;
+    border-right: 1px solid #bbbbbb;
+    transition: background-color 0.2s ease;
+}
+
+.nav-inner a:first-child {
+    border-left: 1px solid #bbbbbb;
+}
+
+.nav-inner a:hover,
+.nav-inner a:focus {
+    background: #cfcfcf;
+}
+
+/* Основной контент */
+.content {
+    padding-top: 25px;
+    padding-bottom: 35px;
+}
+
+.page-section,
+.table-section,
+.form-section {
+    margin-bottom: 35px;
+}
+
+.page-section h2,
+.table-section h2,
+.form-section h2 {
+    margin-top: 0;
+}
+
+/* Стили для таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+caption {
+    margin-bottom: 8px;
+    text-align: left;
+    font-weight: bold;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #777777;
+    text-align: left;
+}
+
+thead th {
+    background: #dddddd;
+}
+
+/* Четные и нечетные строки разного цвета */
+tbody tr:nth-child(odd) {
+    background: #f4f4f4;
+}
+
+tbody tr:nth-child(even) {
+    background: #ffffff;
+}
+
+/* Стили для формы */
+form p {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    max-width: 400px;
+}
+
+fieldset legend {
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+fieldset label {
+    display: inline-block;
+    font-weight: normal;
+    margin-right: 15px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Подвал сайта */
+.site-footer {
+    width: 100%;
+    background: #eeeeee;
+    border-top: 1px solid #cccccc;
+}
+
+.footer-inner {
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+    .header-inner {
+        min-height: 100px;
+    }
+
+    .site-name {
+        font-size: 22px;
+    }
+
+    .logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .nav-inner {
+        flex-wrap: wrap;
+    }
+
+    .nav-inner a {
+        padding: 10px 14px;
+    }
+}
