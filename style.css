@@ -1,4 +1,3 @@
-/* Общие сбросы и базовые стили */
 * {
     box-sizing: border-box;
 }
@@ -24,29 +23,22 @@ body {
     padding-right: 15px;
 }
 
-/* Шапка сайта */
 .site-header {
     width: 100%;
-    background: #eeeeee;
-    border-bottom: 1px solid #cccccc;
+    background: #729fcf;
+    border-bottom: 1px solid #3465a4;
 }
 
 .header-inner {
     min-height: 120px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 25px;
-}
-
-.site-name {
-    font-size: 30px;
-    font-weight: bold;
+    gap: 20px;
 }
 
 .logo-link {
     display: block;
-    flex-shrink: 0; /* Чтобы логотип не сжимался */
+    flex-shrink: 0;
 }
 
 .logo {
@@ -54,48 +46,46 @@ body {
     width: 90px;
     height: 90px;
     object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #3465a4;
 }
 
-/* Навигационное меню */
+.site-name {
+    font-size: 30px;
+    font-weight: bold;
+}
+
 .site-nav {
-    width: 100%;
-    background: #dddddd;
-    border-bottom: 1px solid #bbbbbb;
-}
-
-.nav-inner {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    margin-left: auto;
+    background: #8db3e2;
+    border: 1px solid #3465a4;
 }
 
-.nav-inner a {
+.site-nav a {
     display: block;
     padding: 12px 22px;
-    color: #222;
+    color: #000;
     text-decoration: none;
-    border-right: 1px solid #bbbbbb;
-    transition: background-color 0.2s ease;
+    border-right: 1px solid #3465a4;
 }
 
-.nav-inner a:first-child {
-    border-left: 1px solid #bbbbbb;
+.site-nav a:last-child {
+    border-right: none;
 }
 
-.nav-inner a:hover,
-.nav-inner a:focus {
-    background: #cfcfcf;
+.site-nav a:hover,
+.site-nav a:focus {
+    background: #ffffff;
 }
 
-/* Основной контент */
 .content {
     padding-top: 25px;
     padding-bottom: 35px;
 }
 
-.page-section,
-.table-section,
-.form-section {
+.page-section {
     margin-bottom: 35px;
 }
 
@@ -105,7 +95,25 @@ body {
     margin-top: 0;
 }
 
-/* Стили для таблицы */
+.link-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-top: 8px;
+}
+
+.map-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 8px;
+}
+
+.table-section {
+    margin-top: 30px;
+    margin-bottom: 35px;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -129,7 +137,6 @@ thead th {
     background: #dddddd;
 }
 
-/* Четные и нечетные строки разного цвета */
 tbody tr:nth-child(odd) {
     background: #f4f4f4;
 }
@@ -138,15 +145,12 @@ tbody tr:nth-child(even) {
     background: #ffffff;
 }
 
-/* Стили для формы */
-form p {
-    margin-bottom: 15px;
+.form-section {
+    margin-bottom: 20px;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+form p {
+    margin: 0 0 18px;
 }
 
 input[type="text"],
@@ -155,47 +159,48 @@ input[type="email"],
 input[type="date"],
 select,
 textarea {
-    width: 100%;
-    max-width: 400px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    max-width: 100%;
+    padding: 7px;
+    font: inherit;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"] {
+    width: 320px;
+}
+
+select {
+    width: 320px;
+}
+
+textarea {
+    width: 500px;
+    resize: vertical;
 }
 
 fieldset {
-    border: 1px solid #ccc;
-    padding: 10px 15px;
-    margin-bottom: 15px;
-    max-width: 400px;
-}
-
-fieldset legend {
-    font-weight: bold;
-    padding: 0 5px;
+    margin: 0 0 18px;
+    padding: 10px 14px;
+    border: 1px solid #999999;
+    max-width: 500px;
 }
 
 fieldset label {
-    display: inline-block;
-    font-weight: normal;
-    margin-right: 15px;
+    margin-right: 18px;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-    margin-right: 5px;
-}
-
-button[type="submit"] {
-    padding: 10px 20px;
-    font-size: 16px;
+button {
+    padding: 8px 18px;
+    font: inherit;
     cursor: pointer;
 }
 
-/* Подвал сайта */
 .site-footer {
     width: 100%;
-    background: #eeeeee;
-    border-top: 1px solid #cccccc;
+    background: #729fcf;
+    border-top: 1px solid #3465a4;
 }
 
 .footer-inner {
@@ -204,7 +209,6 @@ button[type="submit"] {
     align-items: center;
 }
 
-/* Адаптивность для мобильных устройств */
 @media (max-width: 600px) {
     .header-inner {
         min-height: 100px;
@@ -219,11 +223,36 @@ button[type="submit"] {
         height: 70px;
     }
 
-    .nav-inner {
+    .header-inner {
+        flex-wrap: wrap;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .site-nav {
+        margin-left: 0;
         flex-wrap: wrap;
     }
 
-    .nav-inner a {
+    .site-nav a {
         padding: 10px 14px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="date"],
+    select,
+    textarea {
+        width: 100%;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 7px;
     }
 }
